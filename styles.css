@@ -1,0 +1,17 @@
+/* font import */
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100;400;700&family=Dosis:wght@200;400;500&display=swap');
+
+h1 {
+    background-color: aqua;
+    padding: 1em;
+    font-family: 'Antonio', sans-serif;
+    font-weight: bold;
+}
+h2 {
+    font-family: 'Antonio', sans-serif;
+    font-weight: lighter;
+}
+li {
+    font-family: 'Dosis', sans-serif;
+    font-weight: normal;
+}
