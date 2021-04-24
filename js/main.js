@@ -6,6 +6,14 @@ const links = [
     {
         label: "Week 1: Story Editor",
         url: "week1/story_editor.html"
+    },
+    {
+        label: "Master Mobile UX Certificate",
+        url: "week1/Master Mobile UX certificate.pdf"
+    },
+    {
+        label: "Master Mobile UX notes",
+        url: "W01 - MASTER MOBILE UX.pdf"
     }
 ]
 
