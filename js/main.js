@@ -13,7 +13,7 @@ const links = [
     },
     {
         label: "Master Mobile UX notes",
-        url: "W01 - MASTER MOBILE UX.pdf"
+        url: "week1/W01 - MASTER MOBILE UX.pdf"
     }
 ]
 
