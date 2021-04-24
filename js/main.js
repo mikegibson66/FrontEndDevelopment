@@ -4,6 +4,10 @@ const links = [
         url: "week1/index.html"
     },
     {
+        label: "Notes on Storage from Doing Things",
+        url: "week1/W01 - Doing Things With Web Things - Storage.pdf"
+    },
+    {
         label: "Week 1: Story Editor",
         url: "week1/story_editor.html"
     },
