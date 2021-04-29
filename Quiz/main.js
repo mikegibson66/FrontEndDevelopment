@@ -35,4 +35,4 @@ for(const [question,answer] of quiz) {
 /* Report player's score after loop completes. Uses the ternary operator to check
 * the plurality of the score. If score is greater than 1, it will add an 's' to the end */
 
-alert(`Game Over! \n You scored ${score} point${score !== 1 ? 's' : ''}`);
+alert(`Game Over!\nYou scored ${score} point${score !== 1 ? 's' : ''}`);
