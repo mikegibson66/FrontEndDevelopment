@@ -75,7 +75,7 @@ const multStretch = function(num1, num2) {
 
 /* declared function subtraction and division */
 function subStretch(num1, num2) {
-    return num2 - num1;
+    return num1 - num2;
 }
 
 function quotientStretch(num1, num2) {
