@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2 Team Activity Numbers and Javascript</title>
+    <link rel="stylesheet" href="numbers.css">
+
+
+</head>
+<body>
+    <div class="Reqs">
+        <div class="Req1">
+            <!-- Requirement 1 -->
+            <h1>Requirement 1</h1>
+            <label for="input1">Enter Number: </label><input id="input1" placeholder="Enter Number"/>
+            <button id="button1" onclick="displayNum()">Submit</button>
+            <p id="output1"></p>
+        </div>
+        <div class="empty">|||</div>
+        <div class="Req2">
+            <!-- Requirement 2 -->
+            <h1>Requirement 2</h1>
+            <label for="input2">Enter Number: </label><input id="input2" placeholder="Enter Number"/>
+            <button id="button2" onclick="sumUp()">Submit</button>
+            <p id="output2"></p>
+        </div>
+        <div class="empty">|||</div>
+        <div class="Req3">
+            <!-- Requirement 3 -->
+            <h1>Requirement 3</h1>
+            <p><label for="input3">Enter A Number: </label><input id="input3" placeholder="Enter Number"/></p>
+            <p><label for="input4">Enter Another Number: </label><input id="input4" placeholder="Enter Number"/>
+            <button id="button3" onclick="addUp()">Add</button></p>
+            <p id="output3"></p>
+        </div>
+    </div>
+    <div class="stretch">
+        <h1>Stretch Attempt</h1>
+        <input id="stretchNum1" placeholder="enter a number" type="number"/>
+        <input id="stretchNum2" placeholder="enter a number" type="number"/>
+        <button id="addition" onclick="callOperation(addStretch,'Sum')">+</button>
+        <button id="subtraction" onclick="callOperation(subStretch, 'Difference')">-</button>
+        <button id="multiplication" onclick="callOperation(multStretch, 'Factor')">*</button>
+        <button id="division" onclick="callOperation(quotientStretch, 'Quotient')">/</button>
+        <p id="stretchOutput"></p>
+    </div>
+
+
+    <script src="../js/numbers.js" language="javascript"></script>
+</body>
+</html>

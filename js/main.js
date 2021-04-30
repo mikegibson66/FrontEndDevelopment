@@ -18,13 +18,25 @@ const links = [
     {
         label: "Master Mobile UX notes",
         url: "week1/W01 - MASTER MOBILE UX.pdf"
+    },
+    {
+        label: "Week 2 Index",
+        url: "week2/index.html"
+    },
+    {
+        label: "W02 - Team Activity",
+        url: "week2/Numbers.html"
+    },
+    {
+        label: "Color Change Button",
+        url: "week2/rainbow.html"
     }
 ]
 
 function dynamicLnk() {
     var finLink = '<ol>';
 
-    for (i = 0; i < links.length; i++) {
+    for (let i = 0, max = links.length; i < max; i++) { // establish the max at the set stage of the loop
         finLink += '<li><a href="' + links[i].url + '">' + links[i].label + '</a></li>';
     }
 

@@ -1,0 +1,14 @@
+/* font import */
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100;400;700&family=Dosis:wght@200;400;500&display=swap');
+
+
+h1 {
+    background-color: aqua;
+    font-family: 'Antonio';
+    font-weight: bold;
+}
+
+.Reqs {
+    display: flex;
+    flex-wrap: wrap;
+}
