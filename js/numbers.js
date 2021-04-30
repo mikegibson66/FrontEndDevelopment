@@ -71,24 +71,18 @@ const addStretch = (num1, num2) => num1 + num2;
 /* expression function multiplication */
 const multStretch = function(num1, num2) {
     return num1 * num2;
-}
+};
 
 /* declared function subtraction and division */
 function subStretch(num1, num2) {
-    if (num1 > num2) {
-        return num1 - num2;
-    } else {
-        return num2 - num1
-    }
+    return num2 - num1;
 }
 
 function quotientStretch(num1, num2) {
-    if (num1 > num2 && num2 !== 0) {
-        return num1 / num2;
-    } else if (num1 !== 0) {
-        return num2 / num1;
-    } else {
+    if (num1 === 0 || num2 === 0) {
         return 0;
+    } else {
+        return num1 / num2;
     }
 }
 
