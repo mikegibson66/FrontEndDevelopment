@@ -30,6 +30,26 @@ const links = [
     {
         label: "Color Change Button",
         url: "week2/rainbow.html"
+    },
+    {
+        label: "Quiz Ninja",
+        url: "week2/W02-QuizNinja.html"
+    },
+    {
+        label: "Programming Basics Notes",
+        url: "week2/W02 - Programming Basics.pdf"
+    },
+    {
+        label: "Arrays, Logic, and Loops Notes",
+        url: "week2/W02 - Arrays, Logic, and Loops.pdf"
+    },
+    {
+        label: "Functions Notes",
+        url: "week2/W02 - Function.pdf"
+    },
+    {
+        label: "CSS Review Notes",
+        url: "week2/W02 - CSS Review.pdf"
     }
 ]
 
