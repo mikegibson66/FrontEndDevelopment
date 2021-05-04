@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 3 Team Activity - Array Cardio</title>
+    <link rel="stylesheet" href="arrayCardio.css">
+</head>
+<body>
+    <div id="headline">
+        <h1>Array Cardio</h1>
+    </div>
+    <div class="reqs">
+        <div class="lists">
+            <!-- unadulterated  lists -->
+            <button id="listInventors" onclick="displayList(inventors)">Display Inventors</button>
+            <button id="listPeople" onclick="displayList(people)">Display People</button>
+            <button id="listData" onclick="displayList( data)">Display Data</button>
+            <p id="list"></p>
+        </div>
+        <div class="sep">||</div>
+        <div class="sep">||</div>
+        <div class="req1">
+            <!-- Inventors Sorted -->
+            <button id="birth" onclick="displaySort(fifteenHun)">Born in 1500's</button>
+            <button id="firstLastName" onclick="displaySort(InventFullName)">Inventor Names</button>
+            <button id="sortDate" onclick="displaySort(orderedBirth)">Sort By Birth Year</button>
+            <p><button id="yearsLived" onclick="totalAge()">Age of Inventors</button>
+            <button id="sortYearsLived" onclick="displayAge(byAge)">Sort by Age</button></p>
+            <p id="sorted"></p>
+        </div>
+    </div>
+
+    <script src="../js/arrayCardio.js" language="javascript"></script>
+</body>
+</html>
