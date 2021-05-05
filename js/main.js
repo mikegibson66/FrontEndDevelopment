@@ -50,6 +50,10 @@ const links = [
     {
         label: "CSS Review Notes",
         url: "week2/W02 - CSS Review.pdf"
+    },
+    {
+        label: "Week 3 Index",
+        url: "week3/index.html"
     }
 ]
 
