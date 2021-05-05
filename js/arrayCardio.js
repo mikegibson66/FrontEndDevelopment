@@ -74,76 +74,59 @@ const data = [
     'truck'
 ]
 
+// Array.prototype.filter()
 const fifteenHun = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year < 1600));
-const InventFullName = inventors.map(inventor => `${inventor.first} ${inventor.last}`);
-const orderedBirth = inventors.sort(function (a, b) {
-    if(a.year > b.year) {
-        return 1;
-    } else if (a.year < b.year) {
-        return -1;
-    } else {
-        return 0;
-    }
+
+// Array.prototype.map()
+const fullName = inventors.map(inventor => `${inventor.first} ${inventor.last}`)
+
+// Array.prototype.sort()
+const orderedBirth = [...inventors].sort((a,b) => a.year > b.year ? 1 : -1);
+
+// Array.prototype.reduce()
+const totalAge = inventors.reduce((total, inventor) => {return total + (inventor.passed - inventor.year)}, 0);
+
+// inventors by years lived
+const byAge = [...inventors].sort(function (a, b) {
+   const aInventor = a.passed - a.year;
+   const bInventor = b.passed - b.year;
+   return bInventor > aInventor ? 1 : -1;
 });
 
-const byAge = inventors.sort(function(a,b) {
-    const lastInventor = a.passed - a.year;
-    const nextInventor = b.passed - a.year;
-    return lastInventor > nextInventor ? -1 : 1;
+// 7. sort Exercise
+const peopleSort = [...people].sort(function(a,b) {
+   const [aLast, aFirst] = a.split(', '); // [aLast, aFirst] unused aFirst
+   const [bLast, bFirst] = b.split(', '); // [bLast, bFirst] unused bFirst
+   return aLast < bLast ? 1 : -1;
 });
-const ageTotal = inventors.reduce((total, inventor) => {return total + (inventor.passed - inventor.year)}, 0);
 
-function displayList(listName) {
-    let finList = '<ul>';
-    for(let i = 0, max = listName.length; i < max; i++) {
-        if (typeof listName[i] === 'object'){
-            finList += '<li>';
-            finList += listName[i].last + ', ' + listName[i].first;
-            finList += '</li>';
+// 8. Reduce Exercise - sum up instances of each
+const countOccurances = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
+
+
+/*
+* FUNCTIONS for displaying results
+ */
+function displayList(listName, location) {
+    let display = '<ul>';
+    for (let i = 0, maxNum = listName.length; i < maxNum; i++) {
+        if(typeof listName[i] === 'object') {
+            display += '<li>';
+            display += listName[i].first + ' ' + listName[i].last + ', birth: '
+                + listName[i].year + ', death: ' + listName[i].passed;
+            if(listName === byAge) {
+                display += '   -    Age at death: ' + (listName[i].passed - listName[i].year);
+            }
+            display += '</li>';
         } else {
-            finList += '<li>' + listName[i] + '</li>';
-        }
-
-    }
-    finList += '</ul>';
-
-    document.getElementById('list').innerHTML = finList;
-}
-
-function displaySort(listName) {
-    let finList = '<ul>';
-    for(let i = 0, max = listName.length; i < max; i++) {
-        if (typeof listName[i] === 'object'){
-            finList += '<li>';
-            finList += listName[i].last + ', ' + listName[i].first + '  Born: ' + listName[i].year;
-            finList += '</li>';
-        } else {
-            finList += '<li>' + listName[i] + '</li>';
+            display += '<li>' + listName[i] + '</li>';
         }
     }
-    finList += '<ul>';
+    display += '</ul>';
 
-    document.getElementById('sorted').innerHTML = finList;
-
+    document.getElementById(location).innerHTML = display;
 }
 
-function displayAge(listName) {
-    let finList = '<ul>';
-    for(let i = 0, max = listName.length; i < max; i++) {
-        if (typeof listName[i] === 'object'){
-            let age = listName[i].passed - listName[i].year;
-            finList += '<li>';
-            finList += listName[i].last + ', ' + listName[i].first + '  Age: ' + age;
-            finList += '</li>';
-        } else {
-            finList += '<li>' + listName[i] + '</li>';
-        }
-    }
-    finList += '<ul>';
-
-    document.getElementById('sorted').innerHTML = finList;
-}
-
-function totalAge() {
-    document.getElementById('sorted').innerHTML = `Total Years Lived: ${ageTotal}`;
+function displaySingleEntity(context, location) {
+    document.getElementById(location).innerHTML = context;
 }
