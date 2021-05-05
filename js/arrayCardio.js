@@ -74,39 +74,40 @@ const data = [
     'truck'
 ]
 
-// Array.prototype.filter()
+// 1. Array.prototype.filter()
 const fifteenHun = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year < 1600));
 
-// Array.prototype.map()
+// 2. Array.prototype.map()
 const fullName = inventors.map(inventor => `${inventor.first} ${inventor.last}`)
 
-// Array.prototype.sort()
+// 3. Array.prototype.sort()
 const orderedBirth = [...inventors].sort((a,b) => a.year > b.year ? 1 : -1);
 
-// Array.prototype.reduce()
+// 4. Array.prototype.reduce()
 const totalAge = inventors.reduce((total, inventor) => {return total + (inventor.passed - inventor.year)}, 0);
 
-// inventors by years lived
+// 5. inventors by years lived
 const byAge = [...inventors].sort(function (a, b) {
-   const aInventor = a.passed - a.year;
-   const bInventor = b.passed - b.year;
-   return bInventor > aInventor ? 1 : -1;
+    const aInventor = a.passed - a.year;
+    const bInventor = b.passed - b.year;
+    return bInventor > aInventor ? 1 : -1;
 });
 
 // 7. sort Exercise
 const peopleSort = [...people].sort(function(a,b) {
-   const [aLast, aFirst] = a.split(', '); // [aLast, aFirst] unused aFirst
-   const [bLast, bFirst] = b.split(', '); // [bLast, bFirst] unused bFirst
-   return aLast < bLast ? 1 : -1;
+    const [aLast, aFirst] = a.split(', '); // [aLast, aFirst] unused aFirst
+    const [bLast, bFirst] = b.split(', '); // [bLast, bFirst] unused bFirst
+    return aLast < bLast ? 1 : -1;
 });
 
 // 8. Reduce Exercise - sum up instances of each
 const countOccurances = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
 
 
-/*
-* FUNCTIONS for displaying results
- */
+/*   **************************
+*   DISPLAY FUNCTIONS - used to display the results of the sorts and
+*   filters used against these arrays.
+     ************************** */
 function displayList(listName, location) {
     let display = '<ul>';
     for (let i = 0, maxNum = listName.length; i < maxNum; i++) {
@@ -114,8 +115,9 @@ function displayList(listName, location) {
             display += '<li>';
             display += listName[i].first + ' ' + listName[i].last + ', birth: '
                 + listName[i].year + ', death: ' + listName[i].passed;
+            // when the sort type is by age, add the age at death
             if(listName === byAge) {
-                display += '   -    Age at death: ' + (listName[i].passed - listName[i].year);
+                display += " - Age at death: " + (listName[i].passed - listName[i].year);
             }
             display += '</li>';
         } else {
