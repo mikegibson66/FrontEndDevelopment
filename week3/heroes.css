@@ -1,0 +1,6 @@
+.highlighted {
+    border: red 2px solid;
+}
+.hide {
+    display: none;
+}
