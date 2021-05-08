@@ -46,6 +46,10 @@ const links = [
     {
         label: "'this' in JavaScript",
         url: "W03 - this in JavaScript.pdf"
+    },
+    {
+        label: "W03 - Questions",
+        url: "W03 - Questions.pdf"
     }
 ]
 
