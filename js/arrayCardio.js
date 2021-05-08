@@ -100,9 +100,14 @@ const byAge = [...inventors].sort(function (a, b) {
 
 // 7. sort Exercise
 const peopleSort = [...people].sort(function(a,b) {
-    const [aLast, aFirst] = a.split(', '); // [aLast, aFirst] unused aFirst
-    const [bLast, bFirst] = b.split(', '); // [bLast, bFirst] unused bFirst
-    return aLast < bLast ? 1 : -1;
+    const [aLast, aFirst] = a.split(', '); // [aLast, aFirst]
+    const [bLast, bFirst] = b.split(', '); // [bLast, bFirst]
+    if( aLast === bLast) {                        // if there are two people with the same last name
+       return aFirst < bFirst ? 1 : -1;
+    } else {
+        return aLast < bLast ? 1 : -1;
+    }
+
 });
 
 // 8. Reduce Exercise - sum up instances of each
@@ -163,6 +168,10 @@ function displaySingleEntity(context, location) {
     document.getElementById(location).innerHTML = context;
 }
 
+
+/*  *******************************************
+*   Implementation of event listeners for the buttons
+    ******************************************* */
 // listeners - Raw Data
 buttons.listInventors.addEventListener('click',() => displayList(inventors,'list'));
 buttons.listPeople.addEventListener('click', () => displayList(people, 'list'));
