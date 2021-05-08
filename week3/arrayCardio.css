@@ -1,4 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100;400;600&family=Dosis:wght@400;500;700&display=swap');
+
+body {
+    background-image: url("../images/matrix_BG.jpg");
+    background-position: center;
+}
+#primary-area {
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+#headline {
+    width: 5.5in;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(230, 230, 230, .6);
+    border-radius: 15px;
+}
+.data {
+    text-align: left;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 700;
+}
+
 .reqs {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(230, 230, 230, .3);
+    width: 12.75in;
+    min-height: 10in;
+    border-radius: 15px;
+}
+
+.data-background {
+    height: 9.5in;
+    width: 4in;
+    background-color: rgba(230, 230, 230, .6);
+    border-radius: 15px;
+}
+
+h1 {
+    font-family: 'Antonio', sans-serif;
+    font-weight: 600;
+    font-size: 4em;
+}
+
+h2 {
+    font-family: 'Antonio', sans-serif;
+    font-weight: 100;
+    font-size: 1.5em;
+    background-color: rgba(230,200,150,.8);
+    border-radius: 8px;
+
 }

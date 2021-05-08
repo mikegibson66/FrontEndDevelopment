@@ -7,39 +7,49 @@
     <link rel="stylesheet" href="arrayCardio.css">
 </head>
 <body>
+<div id="primary-area">
     <div id="headline">
         <h1>Array Cardio</h1>
     </div>
     <div class="reqs">
-        <div class="lists">
-            <!-- unadulterated  lists -->
-            <button id="listInventors" onclick="displayList(inventors, 'list')">Display Inventors</button>
-            <button id="listPeople" onclick="displayList(people, 'list')">Display People</button>
-            <button id="listData" onclick="displayList( data, 'list')">Display Data</button>
-            <p id="list"></p>
+        <div class="data-background">
+            <div class="buttons">
+                <!-- unadulterated  lists -->
+                <button id="listInventors">Display Inventors</button>
+                <button id="listPeople">Display People</button>
+                <button id="listData">Display Data</button>
+            </div>
+            <div class="data-field">
+                <p id="list" class="data"></p>
+            </div>
         </div>
-        <div class="sep">||||</div>
-        <div class="req1">
-            <!-- Inventors Sorted -->
-            <button id="birth" onclick="displayList(fifteenHun, 'sorted')">Born in 1500's</button>
-            <button id="firstLastName" onclick="displayList(fullName, 'sorted')">Inventor Names</button>
-            <p><button id="sortDate" onclick="displayList(orderedBirth, 'sorted')">Sort By Birth Year</button>
-                <button id="sortYearsLived" onclick="displayList(byAge, 'sorted')">Sort by Age</button>
-                <button id="yearsLived" onclick="displaySingleEntity(totalAge, 'sorted')">Total Age of Inventors</button></p>
-            <p id="sorted"></p>
+        <div class="sep"></div>
+        <div class="data-background">
+            <div class="buttons">
+                <!-- Inventors Sorted -->
+                <button id="birth">Born in 1500's</button>
+                <button id="firstLastName">Inventor Names</button>
+                <button id="sortDate">Sort By Birth Year</button>
+                <button id="sortYearsLived">Sort by Age</button>
+                <button id="yearsLived">Total Age of Inventors</button>
+            </div>
+            <div class="data-field">
+                <p id="sorted" class="data"></p>
+            </div>
         </div>
-        <div class="sep">||||</div>
-        <div class="req2">
-            <!-- 7. Sort 8. Reduce -->
-            <button id="sortPeople" onclick="displayList(peopleSort,'sortReduce')">Reverse Sort People by Last Name</button>
-            <button id="sumUpCar" onclick="displaySingleEntity(countOccurances(data, 'car'),'sortReduce')">Number of Cars in data</button>
-            <p><button id="sumUpTruck" onclick="displaySingleEntity(countOccurances(data, 'truck'),'sortReduce')">Number of Trucks in data</button>
-                <button id="sumUpBike" onclick="displaySingleEntity(countOccurances(data, 'bike'),'sortReduce')">Number of Bikes in data</button></p>
-            <p><button id="sumUpVan" onclick="displaySingleEntity(countOccurances(data, 'van'),'sortReduce')">Number of Vans in data</button>
-                <button id="sumUpWalk" onclick="displaySingleEntity(countOccurances(data, 'walk'),'sortReduce')">Number of Walks in data</button></p>
-            <p id="sortReduce"></p>
+        <div class="sep"></div>
+        <div class="data-background">
+            <div class="buttons">
+                <!-- 7. Sort 8. Reduce -->
+                <button id="sortPeople">Reverse Sort People by Last Name</button>
+                <button id="sumUpTrans">Transportation Instance in Data</button>
+            </div>
+            <div class="data-field">
+                <p id="sortReduce" class="data"></p>
+            </div>
         </div>
     </div>
+</div>
 
     <script src="../js/arrayCardio.js" type="text/javascript"></script>
 </body>

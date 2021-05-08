@@ -86,6 +86,11 @@ const orderedBirth = [...inventors].sort((a,b) => a.year > b.year ? 1 : -1);
 // 4. Array.prototype.reduce()
 const totalAge = inventors.reduce((total, inventor) => {return total + (inventor.passed - inventor.year)}, 0);
 
+function updateTotalAge() {
+    return `<ul><li>${totalAge}</li></ul>`;
+
+}
+
 // 5. inventors by years lived
 const byAge = [...inventors].sort(function (a, b) {
     const aInventor = a.passed - a.year;
@@ -103,6 +108,31 @@ const peopleSort = [...people].sort(function(a,b) {
 // 8. Reduce Exercise - sum up instances of each
 const countOccurances = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);
 
+function countThem() {
+    const car = countOccurances(data,'car');
+    const truck = countOccurances(data,'truck');
+    const bike = countOccurances(data,'bike');
+    const van = countOccurances(data,'van');
+    const walk = countOccurances(data,'walk');
+
+    return `<ul><li>Cars: ${car}</li><li>Trucks: ${truck}</li><li>Bikes: ${bike}</li><li>Vans: ${van}</li><li>Walkers: ${walk}</li></ul>`
+
+}
+/*
+  buttons
+ */
+const buttons = {
+    listInventors: document.getElementById('listInventors'),
+    listPeople: document.getElementById('listPeople'),
+    listData: document.getElementById('listData'),
+    birth: document.getElementById('birth'),
+    firstLastName: document.getElementById('firstLastName'),
+    sortDate: document.getElementById('sortDate'),
+    sortYearsLived: document.getElementById('sortYearsLived'),
+    yearsLived: document.getElementById('yearsLived'),
+    sortPeople: document.getElementById('sortPeople'),
+    sumUpTrans: document.getElementById('sumUpTrans')
+}
 
 /*   **************************
 *   DISPLAY FUNCTIONS - used to display the results of the sorts and
@@ -117,7 +147,7 @@ function displayList(listName, location) {
                 + listName[i].year + ', death: ' + listName[i].passed;
             // when the sort type is by age, add the age at death
             if(listName === byAge) {
-                display += " - Age at death: " + (listName[i].passed - listName[i].year);
+                display += "<br>" + " - Age at death: " + (listName[i].passed - listName[i].year);
             }
             display += '</li>';
         } else {
@@ -132,3 +162,19 @@ function displayList(listName, location) {
 function displaySingleEntity(context, location) {
     document.getElementById(location).innerHTML = context;
 }
+
+// listeners - Raw Data
+buttons.listInventors.addEventListener('click',() => displayList(inventors,'list'));
+buttons.listPeople.addEventListener('click', () => displayList(people, 'list'));
+buttons.listData.addEventListener('click', () => displayList(data, 'list'));
+
+// listeners - Inventor Data Manipulations
+buttons.birth.addEventListener('click', () => displayList(fifteenHun, 'sorted'));
+buttons.firstLastName.addEventListener('click', () => displayList(fullName, 'sorted'));
+buttons.sortDate.addEventListener('click', () => displayList(orderedBirth, 'sorted'));
+buttons.sortYearsLived.addEventListener('click', () => displayList(byAge, 'sorted'));
+buttons.yearsLived.addEventListener('click', () => displaySingleEntity(updateTotalAge(), 'sorted'));
+
+// listeners - other data manipulations
+buttons.sortPeople.addEventListener('click', () => displayList(peopleSort,'sortReduce'));
+buttons.sumUpTrans.addEventListener('click', () => displaySingleEntity(countThem(),'sortReduce'));
