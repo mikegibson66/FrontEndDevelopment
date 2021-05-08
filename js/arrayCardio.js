@@ -1,3 +1,4 @@
+// raw data from START
 const people = [
     'Beck, Glenn',
     'Becker, Carl',
@@ -74,6 +75,22 @@ const data = [
     'truck'
 ]
 
+// Raw Data From Start2
+const people2 = [
+    { name: 'Wes', year: 1988 },
+    { name: 'Kait', year: 1986 },
+    { name: 'Irv', year: 1970 },
+    { name: 'Lux', year: 2015 }
+];
+
+const comments = [
+    { text: 'Love this!', id: 523423 },
+    { text: 'Super good', id: 823423 },
+    { text: 'You are the best', id: 2039842 },
+    { text: 'Ramen is my fav food ever', id: 123523 },
+    { text: 'Nice Nice Nice!', id: 542328 }
+];
+
 // 1. Array.prototype.filter()
 const fifteenHun = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year < 1600));
 
@@ -123,6 +140,19 @@ function countThem() {
     return `<ul><li>Cars: ${car}</li><li>Trucks: ${truck}</li><li>Bikes: ${bike}</li><li>Vans: ${van}</li><li>Walkers: ${walk}</li></ul>`
 
 }
+
+/*
+  Some and Every Checks
+ */
+// Array.prototype.some() // is at least one person 19 or older?
+
+function ageCheck(arr) {
+    const date = new Date();
+    const year = date.getFullYear();
+    const greaterThan19 = (element) => element < (year - 19);
+    return arr.year.some(greaterThan19) ? '<ul><li>yes</li></ul>' : '<ul><li>no</li></ul>';
+}
+
 /*
   buttons
  */
@@ -130,13 +160,15 @@ const buttons = {
     listInventors: document.getElementById('listInventors'),
     listPeople: document.getElementById('listPeople'),
     listData: document.getElementById('listData'),
+    listPeople2: document.getElementById('listPeople2'),
     birth: document.getElementById('birth'),
     firstLastName: document.getElementById('firstLastName'),
     sortDate: document.getElementById('sortDate'),
     sortYearsLived: document.getElementById('sortYearsLived'),
     yearsLived: document.getElementById('yearsLived'),
     sortPeople: document.getElementById('sortPeople'),
-    sumUpTrans: document.getElementById('sumUpTrans')
+    sumUpTrans: document.getElementById('sumUpTrans'),
+    someOlder: document.getElementById('someOlder')
 }
 
 /*   **************************
@@ -168,6 +200,14 @@ function displaySingleEntity(context, location) {
     document.getElementById(location).innerHTML = context;
 }
 
+function displayPeople(arr, location) {
+    let display = '<ul>';
+    for (let i = 0, max = arr.length; i < max; i++) {
+        display += '<li>' + arr[i].name + ', born: ' + arr[i].year + '</li>';
+    }
+    display += '</ul>';
+    document.getElementById(location).innerHTML = display;
+}
 
 /*  *******************************************
 *   Implementation of event listeners for the buttons
@@ -176,6 +216,7 @@ function displaySingleEntity(context, location) {
 buttons.listInventors.addEventListener('click',() => displayList(inventors,'list'));
 buttons.listPeople.addEventListener('click', () => displayList(people, 'list'));
 buttons.listData.addEventListener('click', () => displayList(data, 'list'));
+buttons.listPeople2.addEventListener('click', () => displayPeople(people2, 'list'));
 
 // listeners - Inventor Data Manipulations
 buttons.birth.addEventListener('click', () => displayList(fifteenHun, 'sorted'));
@@ -187,3 +228,4 @@ buttons.yearsLived.addEventListener('click', () => displaySingleEntity(updateTot
 // listeners - other data manipulations
 buttons.sortPeople.addEventListener('click', () => displayList(peopleSort,'sortReduce'));
 buttons.sumUpTrans.addEventListener('click', () => displaySingleEntity(countThem(),'sortReduce'));
+buttons.someOlder.addEventListener('click', () => displaySingleEntity(ageCheck(people2),'sortReduce'));
