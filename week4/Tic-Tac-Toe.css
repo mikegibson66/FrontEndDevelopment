@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Saira+Condensed:wght@300;500;700;900&display=swap');
+
+body {
+    background: url("images/XO-background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Saira Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 7em;
+    line-height: 0.0;
+    color: rgba(75,180,180,.8);
+}
+
+h2 {
+    font-family: 'Saira Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 3em;
+    line-height: 0.0;
+}
+
+h5 {
+    font-family: 'Saira Condensed', sans-serif;
+    font-weight: 500;
+    line-height: 0.0;
+}
+
+h6 {
+    font-family: 'Saira Condensed', sans-serif;
+    font-weight: 300;
+    line-height: 0.0;
+}
+
+.XO {
+    font-family: 'Merienda', cursive;
+    font-weight: 700;
+    line-height: 0.0;
+}
+
+.X0-2 {
+    font-family: 'Merienda', cursive;
+    font-weight: 400;
+    line-height: 0.0;
+}
+
+#game-area {
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+.game-board {
+    display: flex;
+    flex-wrap: wrap;
+    width: 5.31in;
+    height: 5.31in;
+    margin-left: auto;
+    margin-right: auto;
+}
+.square {
+    height: 1.75in;
+    width: 1.75in;
+    background-color: rgba(95, 50, 50, .4);
+}
+
+.highlight {
+    background-color: rgba(180, 50, 50, .4);
+}
+
+#square-1 {
+    border-right: .015in rgba(250,30, 30, .8) solid;
+    border-bottom: .015in rgba(250,30, 30, .8) solid;
+}
+#square-2 {
+    border-right: .015in rgba(250,30,30,.8) solid;
+    border-bottom: .015in rgba(250,30,30,.8) solid;
+    border-left: .015in rgba(250,30,30,.8) solid;
+}
+#square-3 {
+    border-bottom: .015in rgba(250,30, 30, .8) solid;
+    border-left: .015in rgba(250,30, 30, .8) solid;
+}
+#square-4 {
+    border-top: .015in rgba(250,30,30,.8) solid;
+    border-right: .015in rgba(250,30,30,.8) solid;
+    border-bottom: .015in rgba(250,30,30,.8) solid;
+}
+#square-5 {
+    border-top: .015in rgba(250,30,30,.8) solid;
+    border-right: .015in rgba(250,30,30,.8) solid;
+    border-bottom: .015in rgba(250,30,30,.8) solid;
+    border-left: .015in rgba(250,30,30,.8) solid;
+}
+#square-6 {
+    border-left: .015in rgba(250,30,30,.8) solid;
+    border-bottom: .015in rgba(250,30,30,.8) solid;
+    border-top: .015in rgba(250,30,30,.8) solid;
+}
+#square-7 {
+    border-right: .015in rgba(250,30,30,.8) solid;
+    border-top: .015in rgba(250,30,30,.8) solid;
+}
+#square-8 {
+    border-left: .015in rgba(250,30,30,.8) solid;
+    border-right: .015in rgba(250,30,30,.8) solid;
+    border-top: .015in rgba(250,30,30,.8) solid;
+}
+#square-9 {
+    border-left: .015in rgba(250,30,30,.8) solid;
+    border-top: .015in rgba(250,30,30,.8) solid;
+}
+
+.X-square {
+    background: url("images/Xs.png") no-repeat center center;
+    background-size: 75%;
+    opacity: .75;
+}
+
+.O-square {
+    opacity: .75;
+}
+
+.X-image {
+    display: none;
+}
+
+.O-image {
+    display: none;
+}
