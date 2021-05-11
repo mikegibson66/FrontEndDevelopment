@@ -29,6 +29,7 @@ h5 {
     font-family: 'Saira Condensed', sans-serif;
     font-weight: 500;
     line-height: 0.0;
+    font-size: 1em;
 }
 
 h6 {
@@ -41,6 +42,7 @@ h6 {
     font-family: 'Merienda', cursive;
     font-weight: 700;
     line-height: 0.0;
+    font-size: 1em;
 }
 
 .X0-2 {
@@ -61,6 +63,14 @@ h6 {
     height: 5.31in;
     margin-left: auto;
     margin-right: auto;
+}
+#score-card {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    margin-right: auto;
+    margin-left: auto;
+    width: 5.31in;
 }
 .square {
     height: 1.75in;
@@ -122,13 +132,7 @@ h6 {
 }
 
 .O-square {
+    background: url("images/Os.png") no-repeat center center;
+    background-size: 75%;
     opacity: .75;
-}
-
-.X-image {
-    display: none;
-}
-
-.O-image {
-    display: none;
 }
