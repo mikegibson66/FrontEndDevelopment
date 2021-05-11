@@ -12,6 +12,18 @@ const squares = {
     resetScore: document.getElementById('resetScore')
 }
 
+const ticTacBoard = {
+    "1": [1,1],
+    "2": [1,2],
+    "3": [1,3],
+    "4": [2,1],
+    "5": [2,2],
+    "6": [2,3],
+    "7": [3,1],
+    "8": [3,2],
+    "9": [3,3]
+}
+
 /*
   highlight a square with a brighter red color
  */
@@ -41,31 +53,54 @@ function player2(event){
 }
 
 /*
-  Game loop
+  reset board
  */
-let player = 1;
-
-function markSquare(event) {
-    if(player === 1) {
-        event.target.classList.remove('unselected');
-        event.target.classList.add('X-square');
-    } else {
-        event.target.classList.remove('unselected');
-        event.target.classList.add('O-square');
-    }
-    if(player ===1) {
-        player++;
-    } else {
-        player = 1;
-    }
+function resetBoard() {
+    document.querySelectorAll('.square').forEach(item => {
+        document.getElementById('turn').innerHTML = '<em class="XO">X</em>\'s turn, <em class="XO">O</em> waits.';
+        item.classList.remove('X-square');
+        item.classList.remove('O-square');
+        item.classList.add('unselected');
+        game();
+    })
 }
 
-squares.square1.addEventListener('click',markSquare,{once: true});
-squares.square2.addEventListener('click',markSquare,{once: true});
-squares.square3.addEventListener('click',markSquare,{once: true});
-squares.square4.addEventListener('click',markSquare,{once: true});
-squares.square5.addEventListener('click',markSquare,{once: true});
-squares.square6.addEventListener('click',markSquare,{once: true});
-squares.square7.addEventListener('click',markSquare,{once: true});
-squares.square8.addEventListener('click',markSquare,{once: true});
-squares.square9.addEventListener('click',markSquare,{once: true});
+
+
+/*
+  Game loop
+ */
+let tie = 0;
+let Os = 0;
+let Xs = 0;
+
+function game(){
+    let player = 0;
+
+    function markSquare(event) {
+        if(player % 2 === 0) {
+            player++;
+            document.getElementById('turn').innerHTML = '<em class="XO">O</em>\'s turn, <em class="XO">X</em> waits.';
+            event.target.classList.remove('unselected');
+            event.target.classList.add('X-square');
+        } else {
+            player++;
+            document.getElementById('turn').innerHTML = '<em class="XO">X</em>\'s turn, <em class="XO">O</em> waits.';
+            event.target.classList.remove('unselected');
+            event.target.classList.add('O-square');
+        }
+    }
+
+    squares.square1.addEventListener('click',markSquare,{once: true});
+    squares.square2.addEventListener('click',markSquare,{once: true});
+    squares.square3.addEventListener('click',markSquare,{once: true});
+    squares.square4.addEventListener('click',markSquare,{once: true});
+    squares.square5.addEventListener('click',markSquare,{once: true});
+    squares.square6.addEventListener('click',markSquare,{once: true});
+    squares.square7.addEventListener('click',markSquare,{once: true});
+    squares.square8.addEventListener('click',markSquare,{once: true});
+    squares.square9.addEventListener('click',markSquare,{once: true});
+    squares.reset.addEventListener('click', resetBoard);
+}
+
+game();
