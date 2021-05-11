@@ -19,11 +19,12 @@ function highlight(event){
     event.target.classList.toggle('highlight');
 }
 /*
+   highlight unselected squares on mouseover
+ */
 document.querySelectorAll('.unselected').forEach(item => {
     item.addEventListener('mouseover',highlight);
     item.addEventListener('mouseout',highlight);
 })
- */
 
 
 /*
