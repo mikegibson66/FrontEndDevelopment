@@ -83,6 +83,10 @@ h6 {
     background-color: rgba(180, 50, 50, .4);
 }
 
+.winLine {
+    background-color: rgba(50,180,50,.9);
+}
+
 .reset {
     width: 1in;
 }

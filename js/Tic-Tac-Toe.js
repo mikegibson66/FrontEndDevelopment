@@ -11,6 +11,10 @@ const squares = {
     reset: document.getElementById('resetButton'),
     resetScore: document.getElementById('resetScore')
 }
+
+/*
+   combinations of squares that are winners
+ */
 const winCombo = [
     [1,2,3],
     [4,5,6],
@@ -20,7 +24,7 @@ const winCombo = [
     [3,6,9],
     [1,5,9],
     [3,5,7]
-]
+];
 
 /*
   convert square id to integer
@@ -51,6 +55,46 @@ function squareCoordinates(id) {
 }
 
 /*
+   check player set against winning combinations
+ */
+function findWin(aSet) {
+    /*
+      function to check if winning combination set is a subset of input set
+    */
+    function subSet(combo, otherSet) {
+        // if winning combination set is larger than input set
+        // it cannot be a subset
+        if(combo > otherSet.size) {
+            return false;
+        } else {
+            for (const elem of combo) {
+                // if any member of a winning combination is not
+                // in the input set, returns false.
+                if(!otherSet.includes(elem)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+
+    /*
+      iterate through winning combinations checking against
+      player set
+     */
+    for (let i = 0; i < winCombo.length; i++){
+        const combo = new Set(winCombo[i]);
+        if(subSet(combo,aSet)) {
+            console.log(combo);
+            return combo;
+        }
+    }
+    return null;
+}
+
+
+
+/*
   highlight a square with a brighter red color
  */
 function highlight(event){
@@ -66,8 +110,8 @@ document.querySelectorAll('.unselected').forEach(item => {
 
 
 /*
-  set to X or O
- */
+  set to X or O (unused)
+
 function player1(event){
     event.target.classList.remove('unselected');
     event.target.classList.add('X-square');
@@ -77,7 +121,7 @@ function player2(event){
     event.target.classList.remove('unselected');
     event.target.classList.add('O-square');
 }
-
+*/
 /*
   reset board
  */
@@ -99,8 +143,8 @@ function resetBoard() {
 let tie = 0;
 let Os = 0;
 let Xs = 0;
-let Xset = new Set();
-let Oset = new Set();
+let Xset = [];
+let Oset = [];
 
 function game(){
     let player = 0;
@@ -112,18 +156,25 @@ function game(){
                 document.getElementById('turn').innerHTML = '<em class="XO">O</em>\'s turn, <em class="XO">X</em> waits.';
                 event.target.classList.remove('unselected');
                 event.target.classList.add('X-square');
-                Xset.add(squareCoordinates(this.id));
+                Xset.push(squareCoordinates(this.id));
+                if(findWin(Xset) !== null) {
+                    gameOver('X', findWin(Xset));
+                }
+
             } else {
                 player++;
                 document.getElementById('turn').innerHTML = '<em class="XO">X</em>\'s turn, <em class="XO">O</em> waits.';
                 event.target.classList.remove('unselected');
                 event.target.classList.add('O-square');
-                Oset.add(squareCoordinates(this.id));
+                Oset.push(squareCoordinates(this.id));
+                if(findWin(Oset) !== null) {
+                    gameOver('O', findWin(Oset));
+                }
+
             }
         }
         if(player === 9) {
-            document.getElementById('turn').innerHTML = 'GAME OVER';
-
+            gameOver('T', null);
         }
         }
 
@@ -138,6 +189,66 @@ function game(){
     squares.square8.addEventListener('click',markSquare,{once: true});
     squares.square9.addEventListener('click',markSquare,{once: true});
     squares.reset.addEventListener('click', resetBoard);
+
+    function gameOver(win, set) {
+
+        squares.square1.removeEventListener('click',markSquare);
+        squares.square2.removeEventListener('click',markSquare);
+        squares.square3.removeEventListener('click',markSquare);
+        squares.square4.removeEventListener('click',markSquare);
+        squares.square5.removeEventListener('click',markSquare);
+        squares.square6.removeEventListener('click',markSquare);
+        squares.square7.removeEventListener('click',markSquare);
+        squares.square8.removeEventListener('click',markSquare);
+        squares.square9.removeEventListener('click',markSquare);
+
+        if(win === 'T') {
+            tie++;
+            document.getElementById('turn').innerHTML = 'TIE! GAME OVER!';
+        } else if(win === 'X') {
+            Xs++;
+            document.getElementById('turn').innerHTML = 'X Wins!';
+        } else {
+            Os++;
+            document.getElementById('turn').innerHTML = 'O Wins!';
+        }
+
+        document.getElementById('score').innerHTML = `Score: <em class="X0-2">X</em> - ${Xs}, <em class="X0-2">O</em> - ${Os}, Tie - ${tie}`;
+
+        for (const space in set) {
+            switch (space) {
+                case 1 :
+                    document.getElementById('square-1').classList.add('winLine');
+                    break;
+                case 2 :
+                    document.getElementById('square-2').classList.add('winLine');
+                    break;
+                case 3 :
+                    document.getElementById('square-3').classList.add('winLine');
+                    break;
+                case 4 :
+                    document.getElementById('square-4').classList.add('winLine');
+                    break;
+                case 5 :
+                    document.getElementById('square-5').classList.add('winLine');
+                    break;
+                case 6 :
+                    document.getElementById('square-6').classList.add('winLine');
+                    break;
+                case 7 :
+                    document.getElementById('square-7').classList.add('winLine');
+                    break;
+                case 8 :
+                    document.getElementById('square-8').classList.add('winLine');
+                    break;
+                case 9 :
+                    document.getElementById('square-2').classList.add('winLine');
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
 }
 
 game();
