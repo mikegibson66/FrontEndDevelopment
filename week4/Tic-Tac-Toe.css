@@ -29,13 +29,14 @@ h5 {
     font-family: 'Saira Condensed', sans-serif;
     font-weight: 500;
     line-height: 0.0;
-    font-size: 1em;
+    font-size: 1.5em;
 }
 
 h6 {
     font-family: 'Saira Condensed', sans-serif;
     font-weight: 300;
     line-height: 0.0;
+    font-size: 1em;
 }
 
 .XO {
@@ -80,6 +81,16 @@ h6 {
 
 .highlight {
     background-color: rgba(180, 50, 50, .4);
+}
+
+.reset {
+    width: 1in;
+}
+.score-area {
+    width: 2.155in;
+}
+.turn-tracker {
+    width: 2.155in;
 }
 
 #square-1 {

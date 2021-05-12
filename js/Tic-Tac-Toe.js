@@ -11,17 +11,43 @@ const squares = {
     reset: document.getElementById('resetButton'),
     resetScore: document.getElementById('resetScore')
 }
+const winCombo = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9],
+    [1,4,7],
+    [2,5,8],
+    [3,6,9],
+    [1,5,9],
+    [3,5,7]
+]
 
-const ticTacBoard = {
-    "1": [1,1],
-    "2": [1,2],
-    "3": [1,3],
-    "4": [2,1],
-    "5": [2,2],
-    "6": [2,3],
-    "7": [3,1],
-    "8": [3,2],
-    "9": [3,3]
+/*
+  convert square id to integer
+ */
+function squareCoordinates(id) {
+    switch(id) {
+        case 'square1':
+            return 1;
+        case 'square2':
+            return 2;
+        case 'square3':
+            return 3;
+        case 'square4':
+            return 4;
+        case 'square5':
+            return 5;
+        case 'square6':
+            return 6;
+        case 'square7':
+            return 7;
+        case 'square8':
+            return 8;
+        case 'square9':
+            return 9;
+        default:
+            return 0;
+    }
 }
 
 /*
@@ -73,23 +99,34 @@ function resetBoard() {
 let tie = 0;
 let Os = 0;
 let Xs = 0;
+let Xset = new Set();
+let Oset = new Set();
 
 function game(){
     let player = 0;
 
     function markSquare(event) {
-        if(player % 2 === 0) {
-            player++;
-            document.getElementById('turn').innerHTML = '<em class="XO">O</em>\'s turn, <em class="XO">X</em> waits.';
-            event.target.classList.remove('unselected');
-            event.target.classList.add('X-square');
-        } else {
-            player++;
-            document.getElementById('turn').innerHTML = '<em class="XO">X</em>\'s turn, <em class="XO">O</em> waits.';
-            event.target.classList.remove('unselected');
-            event.target.classList.add('O-square');
+        if(player < 9){
+            if(player % 2 === 0) {
+                player++;
+                document.getElementById('turn').innerHTML = '<em class="XO">O</em>\'s turn, <em class="XO">X</em> waits.';
+                event.target.classList.remove('unselected');
+                event.target.classList.add('X-square');
+                Xset.add(squareCoordinates(this.id));
+            } else {
+                player++;
+                document.getElementById('turn').innerHTML = '<em class="XO">X</em>\'s turn, <em class="XO">O</em> waits.';
+                event.target.classList.remove('unselected');
+                event.target.classList.add('O-square');
+                Oset.add(squareCoordinates(this.id));
+            }
         }
-    }
+        if(player === 9) {
+            document.getElementById('turn').innerHTML = 'GAME OVER';
+
+        }
+        }
+
 
     squares.square1.addEventListener('click',markSquare,{once: true});
     squares.square2.addEventListener('click',markSquare,{once: true});
