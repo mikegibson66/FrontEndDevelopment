@@ -1,5 +1,6 @@
 const listen = {
-    sqrt: document.getElementById('findSqRt')
+    sqrt: document.getElementById('findSqRt'),
+    sqrt2: document.getElementById('findSqRt2')
 }
 
 const links = [
@@ -34,17 +35,43 @@ function squareRoot(number) {
     }
     return Math.sqrt(number);
 }
+/*
+* using try, catch, finally to handle square roots for possible user entries
+ */
+function imaginarySqRoot(number) {
+    'user strict';
+    let answer;
+    try {
+        answer = String(squareRoot(number));
+    } catch (error) {
+        answer = squareRoot(-number) + 'i';
+    } finally {
+        return `± ${answer}`;
+    }
+}
 
 /*
 * display square root result
  */
-function displaySqRt(number) {
+function displaySqRt(processOption,destination,number) {
     // clear previous entry
-    document.getElementById('sqrtFound').innerHTML = '';
-    const sqRt = squareRoot(number);
-    document.getElementById('sqrtFound').innerHTML = `---> the square root of ${number} is ${sqRt}`;
+    let sqRt;
+    document.getElementById(destination).innerHTML = '';
+    switch (processOption){
+        case 1:
+            sqRt = squareRoot(number);
+            break;
+        case 2:
+            sqRt = imaginarySqRoot(number);
+            break;
+        default:
+            break;
+    }
+
+    document.getElementById(destination).innerHTML = `  ---> the square root of ${number} is ${sqRt}`;
 }
 
-listen.sqrt.addEventListener('click',() => displaySqRt(document.getElementById('sqrt-1').value));
+listen.sqrt.addEventListener('click',() => displaySqRt(1, 'sqrtFound',document.getElementById('sqrt-1').value));
+listen.sqrt2.addEventListener('click',() => displaySqRt(2,'sqrtFound2',document.getElementById('sqrt-2').value));
 
 window.onload = dynamicLnk;
