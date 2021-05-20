@@ -39,7 +39,7 @@ function squareRoot(number) {
 * using try, catch, finally to handle square roots for possible user entries
  */
 function imaginarySqRoot(number) {
-    'user strict';
+    'use strict';
     let answer;
     try {
         answer = String(squareRoot(number));
