@@ -7,6 +7,22 @@ const links = [
     {
         label: "Main Page",
         url: "../index.html"
+    },
+    {
+        label: "Testing and Debugging - Notes",
+        url: "W05 - Testing and Debugging"
+    },
+    {
+        label: "W05 - Team Activity",
+        url: "hikes.html"
+    },
+    {
+        label: "New Quiz Ninja with console notifications",
+        url: "W05-quizNinja.html"
+    },
+    {
+        label: "Challenge 1 - Mock-up",
+        url: "Todo-Screens.pdf"
     }
 ]
 
