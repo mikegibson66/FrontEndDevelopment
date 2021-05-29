@@ -21,12 +21,12 @@ formItems.form.addEventListener('submit', event => {
 formItems.add.addEventListener('click', () => addTask);
 
 formItems.list.addEventListener('click', event => {
-    if(event.target.classList.contains('js-tick')) {
-        const itemKey = event.target.id;
+    if(event.target.classList.contains('checkBox')) {
+        const itemKey = event.target.parentNode.id;
         goalList.toggleDone(itemKey);
     }
     if(event.target.classList.contains('trash')) {
-        const itemKey = event.target.id;
+        const itemKey = event.target.parentNode.id;
         goalList.deleteTask(itemKey);
     }
 });

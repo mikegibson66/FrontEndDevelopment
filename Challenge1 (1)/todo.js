@@ -5,8 +5,7 @@ class Todo {
         const todoItem = {
             text,
             checked: false,
-            id: Date.now(),
-            deleted: false
+            id: Date.now()
         };
 
         this.todoTasks.push(todoItem);
@@ -33,10 +32,10 @@ class Todo {
         node.setAttribute('data-key', todoItem.id);
 
         node.innerHTML = `
-        <div class='listItem'>
-        <input id="${todoItem.id}" type="checkbox" class="js-tick" ${checked}>
-        <div class="toDoText ${isChecked}">${todoItem.text}</div>
-        <div class="trash">🗑</div>
+        <div class='listItem' id="${todoItem.id}">
+            <input type="checkbox" class="checkBox" ${checked}>
+            <div class="toDoText ${isChecked}">${todoItem.text}</div>
+            <div class="trash">🗑</div>
         </div>
         `;
 
@@ -61,11 +60,13 @@ class Todo {
         const index = this.todoTasks.findIndex(item => item.id === Number(key));
 
         // create a new object with the properties of the object to be deleted
-        this.todoTasks[index].deleted = true;
-        const todo = {...this.todoTasks[index]};
+        const todo = {
+            deleted: true,
+            ...this.todoTasks[index]
+        }
 
         // remove the object to be deleted from the array by filtering it out
-        this.todoTasks = this.todoTasks.filter(todoItem => todoItem.id !== Number(key));
+        this.todoTasks = this.todoTasks.filter(item => item.id !== Number(key));
         console.log(this.todoTasks);
         this.renderTodo(todo);
     }
