@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Limelight&family=PT+Sans+Narrow:wght@400;700&display=swap');
+/* font-family: 'Limelight', cursive;
+font-family: 'PT Sans Narrow', sans-serif; */
+
+#user-area {
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 5.0in;
+}
+.title {
+    background-color: darkblue;
+    width: 5in;
+    height: 1.25in;
+    margin-top: -30px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#title-block {
+    font-family: 'limelight', cursive;
+    color: cadetblue;
+    font-size: 5em;
+    line-height: 1em;
+}
+#subtitle {
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 2.5em;
+    margin-top: -70px;
+    color: #cccccc;
+}
+.heads {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    width: 5in;
+    height: .3125in;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: darkslateblue;
+    color: white;
+}
+.selector {
+    width: 1.65in;
+    cursor: pointer;
+}
+.selected {
+    border-bottom: .05in rgba(250,30,30,.8) solid;
+}
+.enterElement {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 5in;
+    height: .3125in;
+    margin-left: auto;
+    margin-right: auto;
+}
+#field #new-goal {
+    width: 4.625in;
+    height: .25in;
+}
+#list {
+    height: 4.5in;
+    overflow-y: auto;
+}
+.listItem {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 4.92in;
+    height: .375in;
+    border: 3px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+.toDoText {
+    width: 4.5in;
+    text-align: left;
+}
+.toDoComplete {
+    text-decoration: line-through;
+}
+.tick {
+    width: 30px;
+    height: 30px;
+    border: 3px solid #333;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.tick::before {
+    content: '✓';
+    font-size: 20px;
+    display: none;
+}
+.trash {
+    font-size: 1.75em;
+    cursor: pointer;
+}
+.circle {
+    border: 1px solid #aaa;
+    box-shadow: inset 1px 1px 3px #fff;
+    width: 22px;
+    height: 22px;
+    border-radius: 100%;
+    position: relative;
+    margin: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    background: #aaaaaa4f;
+}
+.circle:hover {
+    background: #6363634f;
+    cursor: pointer;
+}
+.circle:active {
+    background: radial-gradient(#aaa, #fff);
+}
+.circle:before,
+.circle:after {
+    content:'';position:absolute;top:0;left:0;right:0;bottom:0;
+}
+/* PLUS */
+.circle.plus:before,
+.circle.plus:after {
+    background:green;
+    box-shadow: 1px 1px 1px #ffffff9e;
+}
+.circle.plus:before {
+    width: 2px;
+    margin: 3px auto;
+}
+.circle.plus:after {
+    margin: auto 3px;
+    height: 2px;
+    box-shadow: none;
+}
