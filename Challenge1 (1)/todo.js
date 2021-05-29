@@ -26,13 +26,14 @@ class Todo {
 
         const isChecked = todoItem.checked ? 'toDoComplete' : '';
         const checked = todoItem.checked ? 'checked' : '';
+        const completed = todoItem.checked ? 'done' : 'active';
 
         const node = document.createElement('div');
-        node.setAttribute('class', `toDoText`);
+        node.setAttribute('class', `toDoText ${completed}`);
         node.setAttribute('data-key', todoItem.id);
 
         node.innerHTML = `
-        <div class='listItem' id="${todoItem.id}">
+        <div class="listItem" id="${todoItem.id}">
             <input type="checkbox" class="checkBox" ${checked}>
             <div class="toDoText ${isChecked}">${todoItem.text}</div>
             <div class="trash">🗑</div>
