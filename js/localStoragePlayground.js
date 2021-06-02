@@ -3,11 +3,11 @@ const formItems = {
     ul: document.querySelector('ul'),
     button: document.querySelector('button'),
     input: document.getElementById('item'),
-    itemsArray: localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : []
+    itemsArray: localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [],
+    data: JSON.parse(localStorage.getItem('items'))
 }
 
 localStorage.setItem('items', JSON.stringify(formItems.itemsArray));
-const data = JSON.parse(localStorage.getItem('items'));
 
 const liMaker = (text) => {
     const li = document.createElement('li');
@@ -27,7 +27,7 @@ formItems.form.addEventListener('submit', function (e) {
     formItems.input.focus();
 });
 
-data.forEach(item => {
+formItems.data.forEach(item => {
     liMaker(item);
 })
 
