@@ -1,7 +1,5 @@
 import Todo from './todo.js';
 
-const goalList = new Todo;
-
 const formItems = {
     selectAll: document.getElementById('all'),
     selectActive: document.getElementById('active'),
@@ -9,8 +7,12 @@ const formItems = {
     newGoal: document.getElementById('new-goal'),
     add: document.getElementById('add'),
     form: document.querySelector('.enterElement'),
-    list: document.getElementById('list')
+    list: document.getElementById('list'),
+    goalList: new Todo()
+        /* localStorage.getItem('items') ? new Todo(JSON.parse(localStorage.getItem('items'))) : new Todo([]), */
 }
+
+localStorage.setItem('items', JSON.stringify(formItems.goalList));
 
 
 formItems.form.addEventListener('submit', event => {
@@ -23,11 +25,11 @@ formItems.add.addEventListener('click', () => addTask);
 formItems.list.addEventListener('click', event => {
     if(event.target.classList.contains('checkBox')) {
         const itemKey = event.target.parentNode.id;
-        goalList.toggleDone(itemKey);
+        formItems.goalList.toggleDone(itemKey);
     }
     if(event.target.classList.contains('trash')) {
         const itemKey = event.target.parentNode.id;
-        goalList.deleteTask(itemKey);
+        formItems.goalList.deleteTask(itemKey);
     }
 });
 
@@ -87,9 +89,10 @@ function addTask() {
     const input = document.querySelector('.todo-input');
     const text = input.value.trim();
     if (text !== '') {
-        goalList.addTask(text);
+        formItems.goalList.addTask(text);
         input.value = '';
         input.focus();
     }
 }
+
 

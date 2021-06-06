@@ -1,3 +1,7 @@
+import DynamicLink from "../js/dynamicLink.js";
+
+const dlink = new DynamicLink();
+
 const links = [
     {
         label: "Main Page",
@@ -42,6 +46,10 @@ const links = [
     {
         label: "Quiz Ninja - AJAX",
         url: "W07b-quizNinja.html"
+    },
+    {
+        label: "Week 7 - Hikes",
+        url: "../hikes/hiking-complete.html"
     }
 ]
 
@@ -52,18 +60,8 @@ const formItems = {
     findNext: document.getElementById('findNext')
 }
 
+document.getElementById("directory").innerHTML = dlink.dynamicLnk(links);
 
-function dynamicLnk() {
-    let finLink = '<ol>';
-
-    for (let i = 0, max = links.length; i < max; i++) {
-        finLink += '<li><a href="' + links[i].url + '">' + links[i].label + '</a></li>';
-    }
-
-    finLink += '</ol>';
-
-    document.getElementById("directory").innerHTML = finLink;
-}
 
 function factorial(n) {
     if (n === 0) {

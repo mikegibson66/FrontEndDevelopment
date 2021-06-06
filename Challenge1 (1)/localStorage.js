@@ -1,5 +1,4 @@
 class LocalStorage {
-
     constructor() {
         this.tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     }
@@ -45,9 +44,6 @@ class LocalStorage {
         return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
     }
 
-    getTasks() {
-        return this.tasks;
-    }
 }
 
 export default LocalStorage;

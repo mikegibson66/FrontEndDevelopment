@@ -1,6 +1,10 @@
 class Todo {
     todoTasks = [];
 
+    /* constructor(parse) {
+        this.todoTasks = parse;
+    } */
+
     addTask(text) {
         const todoItem = {
             text,
