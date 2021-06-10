@@ -1,4 +1,8 @@
-const links = [
+import DynamicLink from "./dynamicLink.js";
+
+const dlink = new DynamicLink();
+
+const links1 = [
     {
         label: "Week 1 Index",
         url: "week1/index.html"
@@ -22,24 +26,20 @@ const links = [
     {
         label: "Week 6 Index",
         url: "week6/index.html"
-    },
-    {
-        label: "Week 7 Index",
-        url: "week7/index.html"
     }
 ]
 
-function dynamicLnk() {
-    let finLink = '<ol>';
-
-    for (let i = 0, max = links.length; i < max; i++) { // establish the max at the set stage of the loop
-        finLink += '<li><a href="' + links[i].url + '">' + links[i].label + '</a></li>';
+const links2 = [
+    {
+        label: "Week 7 Index",
+        url: "week7/index.html"
+    },
+    {
+        label: "Week 8 Index",
+        url: "week8/index.html"
     }
+]
 
-    finLink += '</ol>';
-
-    document.getElementById("directory").innerHTML = finLink;
-}
-
-window.onload = dynamicLnk;
+document.getElementById('block1directory').innerHTML = dlink.dynamicLnk(links1);
+document.getElementById('block2Directory').innerHTML = dlink.dynamicLnk(links2);
 
