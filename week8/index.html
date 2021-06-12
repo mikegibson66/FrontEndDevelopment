@@ -34,6 +34,17 @@
 
     </div>
 </div>
+<h2>Canvas Playground</h2>
+<div id="canvasHeadings">
+    <div>
+        <h5 id="createDraw">Create Drawing</h5>
+    </div>
+    <div>
+        <h5 id="drawExist">Drawing an Image to the Canvas</h5>
+    </div>
+
+</div>
+
 <div id="canvasPlayground">
     <div id="theDrawing">
         <canvas id="myCanvas" class="myCanvas" width="200" height="200">
@@ -45,14 +56,54 @@
         <label for="clear">Clear</label>
         <input type="radio" id="rectangle" name="shape" value="1">
         <label for="rectangle">Rectangle</label>
-        <input type="radio" id="pattern" name="shape" value="2">
+        <br><input type="radio" id="pattern" name="shape" value="2">
         <label for="pattern">Pattern</label>
         <input type="radio" id="gradient" name="shape" value="3">
         <label for="gradient">Gradient</label>
-        <input type="radio" id="circle" name="shape" value="4">
+        <br><input type="radio" id="circle" name="shape" value="4">
         <label for="circle">Circle</label>
-        <button name="drawButton" id="drawIt">Draw It</button>
+        <br><button name="drawButton" id="drawIt">Draw It</button>
         <button name="saveButton" id="saveButton">Save Drawing</button>
+    </div>
+    <div id="imageCopy">
+        <canvas id="copyIt" class="myCanvas" width="200" height="200">
+            Sorry! Your browser does not support Canvas.
+        </canvas>
+    </div>
+    <div id="directCopy">
+        <div>
+            <img src="../images/w3c-html5-logo.png" alt="html5 logo" id="imageElement">
+            <br><button name="drawImage" id="copyImage">Copy It!</button>
+            <button name="grayImage" id="grayImage">Make It Gray!</button>
+        </div>
+    </div>
+</div>
+<div id="graphicPlace">
+    <div id="svgPlayground">
+        <h2>SVG Playground</h2>
+        <div id="svg">
+            <div id="svgCircle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 200 200">
+                    <circle cx="50" cy="50" r="25" fill="red"/>
+                    <desc>Drawing a rectangle</desc> // can add a description for the image we're about to draw
+                    <rect x="100" y="25" height="50" width="50" fill="blue" stroke="red" stroke-width="3" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div id="wai">
+        <h2 class="cat">Wai-Aria? HAHA!</h2>
+        <h2 id="catHeading" class="catSub">Form Accessibility - Please Feed Me!</h2>
+        <img src="../images/Cat.png" id="cat" alt="WAI-ARIA CAt" class="catimg">
+        <div class="content">
+            <p id="mouseContainer" class="mc">
+                <img src="../images/mouse.png" alt="mouse treat" id="mouse1" class="mousey" draggable="true">
+                <img src="../images/mouse.png" alt="mouse treat" id="mouse2" class="mousey" draggable="true">
+                <img src="../images/mouse.png" alt="mouse treat" id="mouse3" class="mousey" draggable="true">
+                <img src="../images/mouse.png" alt="mouse treat" id="mouse4" class="mousey" draggable="true">
+                <img src="../images/mouse.png" alt="mouse treat" id="mouse5" class="mousey" draggable="true">
+            </p>
+        </div>
     </div>
 </div>
 

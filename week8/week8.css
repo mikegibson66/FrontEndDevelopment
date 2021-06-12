@@ -20,7 +20,7 @@ h3 {
     line-height: 35px;
 }
 h4 {
-    font-family: 'Merriweather', Serif;
+    font-family: 'Merriweather', serif;
     font-size: 15px;
 }
 li {
@@ -164,4 +164,45 @@ li {
 
 .myCanvas {
     border: dotted 2px black;
+}
+
+#canvasPlayground {
+    display: flex;
+    flex-wrap: nowrap;
+}
+#theSelector {
+    width: 200px;
+}
+#canvasHeadings {
+    width: 600px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+#svgCircle {
+    width: 400px;
+}
+#graphicPlace {
+    display: flex;
+    flex-wrap: nowrap;
+}
+#svg {
+    display: flex;
+    flex-wrap: nowrap;
+}
+#wai {
+    width: 200px;
+}
+.catimg {
+    width: 200px;
+    height: auto;
+}
+.catSub {
+    font-size: 1em;
+}
+.mousey {
+    width: 25px;
+}
+.draganddrop .mc {
+    text-align: center;
 }
