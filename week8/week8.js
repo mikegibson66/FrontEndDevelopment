@@ -6,6 +6,18 @@ const links = [
     {
         label: "Main Page",
         url: "../index.html"
+    },
+    {
+        label: "SWAPI - Team Activity",
+        url: "../SWAPI/swapi.html"
+    },
+    {
+        label: "Canvas, SVG, Drag and Drop Notes - PDF",
+        url: "W08 - Canvas, SVG, Drag and Drop.pdf"
+    },
+    {
+        label: "Transforms and Transitions Notes - PDF",
+        url: "W08- CSS3 TRANSFORMS AND TRANSITIONS.pdf"
     }
 ]
 
