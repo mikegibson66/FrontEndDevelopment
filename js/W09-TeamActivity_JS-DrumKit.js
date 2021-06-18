@@ -19,5 +19,17 @@ function playSound(e) {
     key.classList.add('playing');
 }
 
-formItems.keys.forEach( key => key.addEventListener('transitionend', removeTransition));
+function clickSound() {
+    console.log(this.dataset.key);
+    const code = this.dataset.key;
+    const audio = document.querySelector(`audio[data-key="${code}"]`);
+    const key = document.querySelector(`.key[data-key="${code}"]`);
+
+    audio.currentTime = 0;
+    audio.play();
+    key.classList.add('playing');
+}
+
 window.addEventListener('keydown', playSound);
+formItems.keys.forEach(key => key.addEventListener('click', clickSound));
+formItems.keys.forEach( key => key.addEventListener('transitionend', removeTransition));
