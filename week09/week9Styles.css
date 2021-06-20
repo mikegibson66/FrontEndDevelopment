@@ -1,0 +1,79 @@
+/* font import */
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100;400;600;700&family=Dosis:wght@200;400;700&family=Merriweather:ital,wght@0,300;0,400;1,900&display=swap');
+/**
+font-family: 'Antonio', sans-serif;
+font-family: 'Dosis', sans-serif;
+font-family: 'Merriweather', serif;
+ */
+h1 {
+    background-color: aqua;
+    padding: 1em;
+    font-family: 'Antonio', sans-serif;
+    font-weight: 400;
+}
+h2 {
+    font-family: 'Antonio', sans-serif;
+    font-weight: 100;
+}
+h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 35px;
+}
+h4 {
+    font-family: 'Merriweather', Serif;
+    font-size: 15px;
+}
+li {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+}
+
+.challenge1 {
+    font-family: 'Antonio', sans-serif;
+    font-weight: 100;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.button {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 200;
+}
+#primeArea {
+    display: flex;
+    flex-wrap: nowrap;
+}
+#list {
+    width: 3in;
+}
+
+#task1 {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 4in;
+}
+#animePlayground {
+    display: flex;
+    flex-wrap: nowrap;
+}
+#development {
+    display: flex;
+    flex-wrap: nowrap;
+}
+#square {
+    margin: 35px;
+    width: 100px;
+    height: 100px;
+    background: #d16;
+}
+#second {
+    margin: 35px;
+    width: 100px;
+    height: 100px;
+    background: #611BBD;
+}
+#coordinates {
+    height: 100px;
+}

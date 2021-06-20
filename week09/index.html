@@ -4,12 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WDD 330 Portfolio - Week 9</title>
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="week9Styles.css">
 </head>
 <body>
 <h1>WDD 330 Portfolio</h1>
 <h2>Week 9</h2>
 <div id="directory"></div>
+<div id="development">
+  <div id="animation">
+    <h2 class="anime">Animation Playground</h2>
+    <div id="animePlayground">
+      <div id="square"></div>
+      <div id="second"></div>
+    </div>
+  </div>
+  <div id="geoLocation">
+    <h2 class="geoTag">GeoLocation Playground</h2>
+    <div id="coordinates"></div>
+    <button name="geoLocate" id="geoLocate" class="button">Get GeoLocation</button>
+  </div>
+</div>
+<div id="devTwo">
+  <div id="workers">
+    <h2 class="webWorkers">Web Workers</h2>
+    <div id="numberEntry">
+      <label for="number">Enter a Number to Factorize:</label>
+      <input id="number" type="number" name="number" min=1 value=20>
+      <button type="submit" id="numSub" class="button">Submit</button>
+    </div>
+    <div id="output"></div>
+    <div id="websock">
+      <div id="socketForm">
+        <label for="message">Enter a Message:</label>
+        <input type='text' name="message" id="message">
+        <button type="submit" id="messSub" class="button">Send Message</button>
+      </div>
+      <div id="outputMess"></div>
+    </div>
+  </div>
+</div>
 
 <script src = "week9.js" type="module"></script>
 </body>
