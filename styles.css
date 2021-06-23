@@ -126,3 +126,14 @@ li {
         background-position: 120% 0;
     }
 }
+#results {
+    display: flex;
+    flex-wrap: wrap;
+}
+.user {
+    width: 2in;
+    background-color: #aaaaaa;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
