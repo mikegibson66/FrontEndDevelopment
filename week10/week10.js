@@ -16,6 +16,14 @@ const links = [
     {
         label: "Main Page",
         url: "../index.html"
+    },
+    {
+        label: "W10 - Client-side Form Validation - Notes",
+        url: "W10-Client-sideFormValidation.pdf"
+    },
+    {
+        label: "W10 - Fetch APIs - Notes",
+        url: "W10-FETCH_APIs.pdf"
     }
 ]
 document.getElementById("directory").innerHTML = dlink.dynamicLnk(links);
@@ -170,7 +178,9 @@ const email = document.getElementById('mail');
 // This is dangerous because you can easily build an infinite loop.
 // In modern browsers, you should prefer using element.nextElementSibling
 let error = email;
-while ((error = error.nextSibling).nodeType !== 1);
+while ((error = error.nextSibling).nodeType !== 1) {
+    // nothing to do here - avoiding empty while statement warning
+}
 
 // As per the HTML5 Specification
 const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
