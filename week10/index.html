@@ -4,13 +4,142 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WDD 330 Portfolio - Week 10</title>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="week10.css">
 </head>
 <body>
 <h1>WDD 330 Portfolio</h1>
 <h2>Week 10</h2>
 <div id="directory"></div>
-<div id="app"></div>
+<div id="dataPlayground">
+    <h2>Sample Data</h2>
+    <button name="pageOne" value="pageOne" class="button" id="pageOne">Page One</button>
+    <button name="pageTwo" value="pageTwo" class="button" id="pageTwo">Page Two</button>
+    <div id="app"></div>
+    <div id="post">
+        <div id="dataEntry">
+            <label for="postName">Select Name<abbr title="This field is mandatory" aria-label="required"> *</abbr></label>
+            <input type="text" id="postName" name="postName" list="t0" required>
+            <datalist id="t0">
+                <option>Morpheus</option>
+                <option>Phobetor</option>
+                <option>Phantasus</option>
+            </datalist>
+            <label for="postPosition">Select Job<abbr title="This field is mandatory" aria-label="required"> *</abbr></label>
+            <input type="text" id="postPosition" name="postPosition" list="s0" required>
+            <datalist id="s0">
+                <option>Sender of Human Shapes</option>
+                <option>Sender of Animal Forms</option>
+                <option>Sender of Inanimate Forms</option>
+            </datalist>
+        </div>
+        <div id="entryButton">
+            <button name="postInfo" value="POST" class="button" id="postInfo">Post</button>
+        </div>
+    </div>
+</div>
+<div id="validation">
+    <h2>Form Validation</h2>
+    <div id="validationPlayground">
+        <div id="html5Validation">
+            <h4>HTML5 Form Validation</h4>
+            <form>
+                <div>
+                    <fieldset>
+                        <legend>Do you have a driver's license?<abbr title="This field is mandatory" aria-label="required">*</abbr></legend>
+                        <!-- While only one radio button in a same-named group can be selected at a time,
+                             and therefore only one radio button in a same-named group having the "required"
+                             attribute suffices in making a selection a requirement -->
+                        <input type="radio" required name="driver" id="r1" value="yes"><label for="r1">Yes</label>
+                        <input type="radio" required name="driver" id="r2" value="no"><label for="r2">No</label>
+                    </fieldset>
+                </div>
+                <div>
+                    <label for="n1">How old are you?</label>
+                    <!-- The pattern attribute can act as a fallback for browsers which
+                         don't implement the number input type but support the pattern attribute.
+                         Please note that browsers that support the pattern attribute will make it
+                         fail silently when used with a number field.
+                         Its usage here acts only as a fallback -->
+                    <input type="number" min="16" max="120" step="1" id="n1" name="age"
+                           pattern="\d+">
+                </div>
+                <div>
+                    <label for="t1">What's your favorite fruit?<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+                    <input type="text" id="t1" name="fruit" list="l1" required
+                           pattern="[Bb]anana|[Cc]herry|[Aa]pple|[Ss]trawberry|[Ll]emon|[Oo]range">
+                    <datalist id="l1">
+                        <option>Banana</option>
+                        <option>Cherry</option>
+                        <option>Apple</option>
+                        <option>Strawberry</option>
+                        <option>Lemon</option>
+                        <option>Orange</option>
+                    </datalist>
+                </div>
+                <div>
+                    <label for="t2">What's your e-mail address?</label>
+                    <input type="email" id="t2" name="t2">
+                </div>
+                <div>
+                    <label for="t3">Leave a short message</label>
+                    <textarea id="t3" name="msg" maxlength="140" rows="5"></textarea>
+                </div>
+                <div>
+                    <button class="button">Submit</button>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Constraint_validation#validation-related_attributes" target="_blank">
+                        Validation-related attributes
+                    </a>
+                </div>
+            </form>
+        </div>
+        <div class="spacer"></div>
+        <div id="jsValidation">
+            <h4>JavaScript (API) Form Validation</h4>
+            <form id="jsValid" novalidate>
+                <div>
+                    <label for="JSmail">
+                        <span>Please enter an email address:</span>
+                        <input type="email" id="JSmail" name="JSmail" required minlength="8">
+                        <span class="error" aria-live="polite"></span>
+                    </label>
+                </div>
+                <div>
+                    <div>
+                        <button class="button">Submit</button>
+                        <h5>For more information:</h5>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Constraint_validation" target="_blank">
+                            Constraint Validation Guide
+                        </a>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Constraint_validation" target="_blank">
+                            Constraint Validation API
+                        </a>
+                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions" target="_blank">
+                            Additional Information on Regular Expressions
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="spacer"></div>
+        <div id="jsNoAPI">
+            <h4>JavaScript (No API) Form Validation</h4>
+            <form id="noAPI">
+                <div>
+                    <label for="mail">
+                        <span>Please enter an email address:</span>
+                        <input type="text" id="mail" name="mail">
+                        <span class="error" aria-live="polite"></span>
+                    </label>
+                </div>
+                <!-- Some legacy browsers need to have the `type` attribute
+                     explicitly set to `submit` on the `button`element -->
+                <button type="submit" class="button">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
 
 <script src = "week10.js" type="module"></script>
 </body>

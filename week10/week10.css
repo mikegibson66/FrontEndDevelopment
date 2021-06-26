@@ -1,0 +1,211 @@
+/* font import */
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100;400;600;700&family=Dosis:wght@200;400;700&family=Merriweather:ital,wght@0,300;0,400;1,900&display=swap');
+/**
+font-family: 'Antonio', sans-serif;
+font-family: 'Dosis', sans-serif;
+font-family: 'Merriweather', serif;
+ */
+h1 {
+    background-color: aqua;
+    padding: 1em;
+    font-family: 'Antonio', sans-serif;
+    font-weight: 400;
+}
+h2 {
+    font-family: 'Antonio', sans-serif;
+    font-weight: 100;
+}
+h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 35px;
+}
+h4 {
+    font-family: 'Merriweather', serif;
+    font-size: 15px;
+}
+li {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+}
+
+.challenge1 {
+    font-family: 'Antonio', sans-serif;
+    font-weight: 100;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.button {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+}
+#primeArea {
+    display: flex;
+    flex-wrap: nowrap;
+}
+#list {
+    width: 3in;
+}
+
+#task1 {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 4in;
+}
+
+#results {
+    display: flex;
+    flex-wrap: wrap;
+}
+.user {
+    width: 2in;
+    background-color: #aaaaaa;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
+
+.response {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+    font-size: .875rem;
+}
+
+#validationPlayground {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+form {
+    font: 1em sans-serif;
+    max-width: 320px;
+}
+
+p > label {
+    display: block;
+}
+
+#html5Validation input[type="text"],
+#html5Validation input[type="email"],
+#html5Validation input[type="number"],
+#html5Validation textarea,
+#html5Validation fieldset {
+    width : 100%;
+    border: 1px solid #333;
+    box-sizing: border-box;
+}
+
+#html5Validation input:invalid {
+    box-shadow: 0 0 5px 1px red;
+}
+
+#html5Validation input:focus:invalid {
+    box-shadow: none;
+}
+.spacer {
+    width: 2em;
+}
+
+#jsValidation {
+    font: 1em sans-serif;
+    padding: 0;
+}
+
+#jsValidation div * {
+    display: block;
+}
+
+#jsValidation input[type=email]{
+    -webkit-appearance: none;
+    appearance: none;
+
+    width: 100%;
+    border: 1px solid #333;
+    margin: 0;
+
+    font-family: inherit;
+    font-size: 90%;
+
+    box-sizing: border-box;
+}
+
+/* This is our style for the invalid fields */
+#jsValidation input:invalid{
+    border-color: #900;
+    background-color: #FDD;
+}
+
+#jsValidation input:focus:invalid {
+    outline: none;
+}
+
+/* This is the style of our error messages */
+#jsValidation .error {
+    width  : 100%;
+    padding: 0;
+
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+
+    box-sizing: border-box;
+}
+
+#jsValidation .error.active {
+    padding: 0.3em;
+}
+
+#jsNoAPI {
+    font: 1em sans-serif;
+    padding: 0;
+}
+
+#jsNoAPI form {
+    max-width: 400px;
+}
+
+#jsNoAPI div * {
+    display: block;
+}
+
+#jsNoAPI input.mail {
+    -webkit-appearance: none;
+
+    width: 100%;
+    border: 1px solid #333;
+    margin: 0;
+
+    font-family: inherit;
+    font-size: 90%;
+
+    box-sizing: border-box;
+}
+
+/* This is our style for the invalid fields */
+#jsNoAPI input.invalid{
+    border-color: #900;
+    background-color: #FDD;
+}
+
+#jsNoAPI input:focus.invalid {
+    outline: none;
+}
+
+/* This is the style of our error messages */
+#jsNoAPI .error {
+    width  : 100%;
+    padding: 0;
+
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+    box-sizing: border-box;
+}
+
+#jsNoAPI .error.active {
+    padding: 0.3em;
+}
