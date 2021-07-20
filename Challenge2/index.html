@@ -13,7 +13,22 @@
             <form>
                 <input type="text" placeholder="Search Your Recipe...">
                 <ion-icon name="search"></ion-icon>
+                <div id="selector">
+                    <div id="diet">
+                        <h2>Special Diet</h2>
+                        <div class="options">
+                            <input type="radio" id="none" name="diet" value="0" checked/>
+                            <label for="none">None</label>
+                            <input type="radio" id="low-carb" name="diet" value="1"/>
+                            <label for="low-carb">Low Carb</label>
+                            <input type="radio" id="gluten" name="diet" value="2"/>
+                            <label for="gluten">Gluten Intolerance</label>
+                        </div>
+                    </div>
+
+                </div>
             </form>
+
             <div class="search-result">
                 <!-- template of result items
                 <div class="item">

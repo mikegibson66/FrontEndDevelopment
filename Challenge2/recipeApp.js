@@ -4,6 +4,7 @@ const container = document.querySelector('.container');
 const rapidAPIKey = '4bce0706f4msh51511146eb63257p1a0856jsn460f4c2e91e5';
 const rapidAPIHost = 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com';
 const rapidAPIApp = 'default-application_5355362';
+const dietType = document.getElementsByName('diet');
 // const baseURL = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?query=pizza&number=20`;
 let searchQuery = '';
 
@@ -11,11 +12,12 @@ searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     searchQuery = e.target.querySelector('input').value;
     console.log(searchQuery);
-    fetchAPI(searchQuery);
+    const diet = selectDiet();
+    fetchAPI(searchQuery, diet);
 });
 
-async function fetchAPI(search){
-    const baseURL = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?query=${search}&number=20`;
+async function fetchAPI(search,diet){
+    const baseURL = `https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search?query=${search}${diet}&number=20`;
     await fetch(baseURL, {
         "method": "GET",
         "headers": {
@@ -36,6 +38,24 @@ async function fetchAPI(search){
         .catch(error => {
             console.error(error);
         });
+}
+
+function selectDiet() {
+    let value = 0;
+    for (let i = 0, len = dietType.length;i < len; i++) {
+        if(dietType[i].checked) {
+            value = dietType[i].value;
+            break;
+        }
+    }
+    switch (parseInt(value)) {
+        case 0:
+            return '';
+        case 1:
+            return '&diet=low-carb';
+        case 2:
+            return '&intolerances=gluten';
+    }
 }
 
 function generateHTML(results) {
